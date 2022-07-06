@@ -13,16 +13,33 @@ var FormView = {
   handleSubmit: function(event) {
     // Stop the browser from submitting the form
     event.preventDefault();
+    // var message = $('#message').val();
+    // // TODO: Currently, this is all handleSubmit does.
+    // // Make this function actually send a message to the Parse API.
+    // // Create a new onclick event handler; inside that hander, add Parse.create
 
-    // TODO: Currently, this is all handleSubmit does.
-    // Make this function actually send a message to the Parse API.
-  
-    console.log('click!');
+    //messageView.renderMessage
+    //messageView.renderMessage is used
+    //create message object
+    //seperately get values from DOM
+    var message = {
+      //username
+      username: App.username,
+      //text
+      text: $('#message').val(),
+      //roomname
+      roomname: undefined
+    }
+    Parse.create(message); // Posting to server
+    MessageView.render(message) // Giving the message to the "template"
+    // MessagesView.renderMessage(JSON.stringify(message)); // rendering the template with added message
+    MessagesView.renderMessage(MessageView.render(message)); // rendering the template with added message
+    console.log('message', message)
   },
 
   setStatus: function(active) {
     var status = active ? 'true' : null;
-    FormView.$form.find('input[type=submit]').attr('disabled', status);
+    FormView.$form.find('input[type=submit]').attr('disabled', null);
   }
 
 };

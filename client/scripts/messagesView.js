@@ -16,7 +16,10 @@ var MessagesView = {
 
   renderMessage: function(message) {
     // TODO: Render a single message.
-    $('#chats').append(MessageView.render(message))
+    // var newMsg = MessageView.render(message)
+    // console.log('newMsg: ', newMsg);
+    console.log('message in renderMessage', message)
+    $('#chats').append(message);
   },
 
   handleClick: function(event) {
@@ -26,14 +29,5 @@ var MessagesView = {
 
 };
 
-console.log(MessagesView)
-console.log(MessageView.render)
+console.log('MessagesView', MessagesView)
 
-// <div class = "chats">
-//   <div class='chat'>" +
-//         "<div class='username'></div>" +
-//         "<div class='text'></div>" +
-//         "<div class='roomname'></div>" +
-//         "<div></div>" +
-//       </div>"
-// </div>
