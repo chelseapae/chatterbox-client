@@ -7,7 +7,7 @@ var FormView = {
   $form: $('form'),
 
   initialize: function() {
-    FormView.$form.on('submit', FormView.handleSubmit);
+    FormView.$form.on("'submit'", FormView.handleSubmit);
   },
 
   handleSubmit: function(event) {

@@ -31,13 +31,17 @@ var App = {
 
       // TODO: Use the data to update Messages and Rooms
       Messages._setFetch(data);
+      //Rooms._setRooms(data);
       // and re-render the corresponding views.
     });
-    callback();
     setTimeout(function() {
       MessagesView.render();
+     // RoomsView.render();
       console.log('app.js - fetch - setTimeout');
-    },1000)
+    },1000);
+
+
+    callback();
   },
 
   startSpinner: function() {
