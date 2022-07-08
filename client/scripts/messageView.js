@@ -7,21 +7,9 @@ var MessageView = {
   // TODO: Update this template accordingly.
   render: _.template(`
     <div class='chat'>
-      <div class='username'><%= message.username %></div>
-      <div class='text'><%= message.text %></div>
+      <div class='username'><%- username %></div>
+      <div class='text'><%- text %></div>
     <div></div>
   </div>
   `)
 }
-
-console.log('messageView.js - message.username: ', message.username);
-console.log('messageView.js - message.text: ', message.text);
-console.log('messageView.js - MessageView.render', MessageView.render)
-// console.log('data', data)
-
-
-      // "<div class='chat'>" +
-      //   "<div class='username'>" + "<%= message.username %>" + "</div>" +
-      //   "<div class='text'>" + "<%= message.text %>" + "</div>" +
-      //   "<div>" + "</div>" +
-      // "</div>"

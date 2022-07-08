@@ -36,8 +36,8 @@ var App = {
     callback();
     setTimeout(function() {
       MessagesView.render();
+      console.log('app.js - fetch - setTimeout');
     },1000)
-    console.log('app.js - fetch - Messages._data: ', Messages._data);
   },
 
   startSpinner: function() {

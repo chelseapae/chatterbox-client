@@ -35,13 +35,16 @@ var FormView = {
       App.fetch(App.stopSpinner);
     }, 1000);
 
-    //render new fetched data to DOM
+    $('#chats').empty();
 
+
+    //render new fetched data to DOM
+    // MessagesView.render();
+    // console.log('formView - handleSubmit')
 
     //Replaced with setTimeout as we believe a slow upload + fast download may lead to fetch happening before post is complete
     //App.fetch(App.stopSpinner); // After posting to server, fetch again without having to refresh page
     // MessagesView.renderMessage(message); // rendering the template with added message
-    console.log('formView.js - message', message)
   },
 
   setStatus: function(active) {
