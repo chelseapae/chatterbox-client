@@ -11,15 +11,25 @@ var MessagesView = {
   },
 
   render: function() {
+    //confirmed data is copied to _data
+    console.log('messagesView.js - render - _data: ', Messages._data);
     // TODO: Render _all_ the messages.
+    var i, html = "";
+    for (i = 0; i < 10; i++) {
+      console.log('messagesView.js - render - forLoop - Messages._data[i]: ', Messages._data[i]);
+      html += MessageView.render(Messages._data[i]);
+      console.log('messagesView.js - render - forLoop - html: ', html);
+    }
+    $("#chats").append(html);
   },
 
   renderMessage: function(message) {
     // TODO: Render a single message.
-    // var newMsg = MessageView.render(message)
-    // console.log('newMsg: ', newMsg);
-    console.log('message in renderMessage', message)
-    $('#chats').append(message);
+    var newMsg = MessageView.render(message)
+    console.log('messagesView.js - window', window)
+    console.log('messagesView.js - newMsg: ', newMsg);
+    console.log('messagesView.js - message in renderMessage', message)
+    $('#chats').append(newMsg);
   },
 
   handleClick: function(event) {
@@ -29,5 +39,5 @@ var MessagesView = {
 
 };
 
-console.log('MessagesView', MessagesView)
+console.log('messagesView.js - MessagesView', MessagesView)
 

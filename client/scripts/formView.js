@@ -31,10 +31,17 @@ var FormView = {
       roomname: undefined
     }
     Parse.create(message); // Posting to server
-    MessageView.render(message) // Giving the message to the "template"
-    // MessagesView.renderMessage(JSON.stringify(message)); // rendering the template with added message
-    MessagesView.renderMessage(MessageView.render(message)); // rendering the template with added message
-    console.log('message', message)
+    setTimeout(function(){
+      App.fetch(App.stopSpinner);
+    }, 1000);
+
+    //render new fetched data to DOM
+
+
+    //Replaced with setTimeout as we believe a slow upload + fast download may lead to fetch happening before post is complete
+    //App.fetch(App.stopSpinner); // After posting to server, fetch again without having to refresh page
+    // MessagesView.renderMessage(message); // rendering the template with added message
+    console.log('formView.js - message', message)
   },
 
   setStatus: function(active) {

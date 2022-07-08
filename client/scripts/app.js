@@ -24,13 +24,20 @@ var App = {
   },
 
   fetch: function(callback = ()=>{}) {
+    App.startSpinner();
     Parse.readAll((data) => {
       // examine the response from the server request:
       console.log(data);
 
       // TODO: Use the data to update Messages and Rooms
+      Messages._setFetch(data);
       // and re-render the corresponding views.
     });
+    callback();
+    setTimeout(function() {
+      MessagesView.render();
+    },1000)
+    console.log('app.js - fetch - Messages._data: ', Messages._data);
   },
 
   startSpinner: function() {
