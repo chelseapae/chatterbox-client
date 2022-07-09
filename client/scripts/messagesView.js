@@ -12,16 +12,17 @@ var MessagesView = {
 
   render: function() {
     // TODO: Render _all_ the messages.
-    var i, html = "";
+    var i;
+    var html = '';
     for (i = 0; i < 10; i++) {
       html += MessageView.render(Messages._data[i]);
     }
-    $("#chats").prepend(html);
+    $('#chats').prepend(html);
   },
 
   renderMessage: function(message) {
     // TODO: Render a single message.
-    var newMsg = MessageView.render(message)
+    var newMsg = MessageView.render(message);
     $('#chats').prepend(newMsg);
   },
 

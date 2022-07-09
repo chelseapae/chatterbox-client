@@ -7,7 +7,7 @@ var FormView = {
   $form: $('form'),
 
   initialize: function() {
-    FormView.$form.on("'submit'", FormView.handleSubmit);
+    FormView.$form.on('submit', FormView.handleSubmit);
   },
 
   handleSubmit: function(event) {
@@ -28,10 +28,13 @@ var FormView = {
       //text
       text: $('#message').val(),
       //roomname
-      roomname: undefined
-    }
-    Parse.create(message); // Posting to server
-    setTimeout(function(){
+      //** added rooms select val into message obj
+      roomname: $('#rooms select').val()
+    };
+    Parse.create(message, (data) => {
+      console.log(data);
+    }); // Posting to server
+    setTimeout(function() {
       App.fetch(App.stopSpinner);
     }, 1000);
 
@@ -49,7 +52,7 @@ var FormView = {
 
   setStatus: function(active) {
     var status = active ? 'true' : null;
-    FormView.$form.find('input[type=submit]').attr('disabled', null);
+    FormView.$form.find('input[type=submit]').attr('disabled', status);
   }
 
 };
