@@ -15,14 +15,13 @@ var Rooms = {
   // },
 
   _update: function() {
-
   },
 
   _get: function() {
     return Rooms._data;
   },
 
-  _setRooms: function(data) {
+  add: function(data) {
     for (var i = 0; i < data.length; i++) {
       if (!Rooms._data.includes(data[i].roomname)) {
         Rooms._data.push(data[i].roomname);

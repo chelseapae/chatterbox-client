@@ -43,7 +43,9 @@ var RoomsView = {
     // TODO: Handle the user clicking the "Add Room" button.
     var userInput = prompt('Some Prompt');
     RoomsView.renderRoom(userInput);
+    Rooms.add(userInput);
     $('#rooms select option:last').prop('selected',true);
+    console.log($('#rooms select option:last'));
   }
 
 };
