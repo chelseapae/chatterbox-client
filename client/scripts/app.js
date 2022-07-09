@@ -37,7 +37,6 @@ var App = {
     setTimeout(function() {
       MessagesView.render();
      // RoomsView.render();
-      console.log('app.js - fetch - setTimeout');
     },1000);
 
 

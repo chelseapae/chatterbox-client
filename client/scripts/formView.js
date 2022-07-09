@@ -7,7 +7,7 @@ var FormView = {
   $form: $('form'),
 
   initialize: function() {
-    FormView.$form.on("'submit'", FormView.handleSubmit);
+    FormView.$form.on('submit', FormView.handleSubmit);
   },
 
   handleSubmit: function(event) {
@@ -26,7 +26,8 @@ var FormView = {
       //username
       username: App.username,
       //text
-      text: $('#message').val(),
+      // text: $('#message').val(),
+      text: "test string",
       //roomname
       roomname: undefined
     }
