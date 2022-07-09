@@ -26,16 +26,19 @@ var FormView = {
       //username
       username: App.username,
       //text
-      // text: $('#message').val(),
-      text: "test string",
+      text: $('#message').val(),
       //roomname
-      roomname: undefined
-    }
-    Parse.create(message); // Posting to server
-    setTimeout(function(){
+      //** added rooms select val into message obj
+      roomname: $('#rooms select').val()
+    };
+    Parse.create(message, (data) => {
+      console.log(data);
+    }); // Posting to server
+    setTimeout(function() {
       App.fetch(App.stopSpinner);
     }, 1000);
 
+    RoomsView.$select.empty();
     $('#chats').empty();
 
 
@@ -50,7 +53,7 @@ var FormView = {
 
   setStatus: function(active) {
     var status = active ? 'true' : null;
-    FormView.$form.find('input[type=submit]').attr('disabled', null);
+    FormView.$form.find('input[type=submit]').attr('disabled', status);
   }
 
 };

@@ -31,12 +31,12 @@ var App = {
 
       // TODO: Use the data to update Messages and Rooms
       Messages._setFetch(data);
-      //Rooms._setRooms(data);
+      Rooms._setRooms(data);
       // and re-render the corresponding views.
     });
     setTimeout(function() {
       MessagesView.render();
-     // RoomsView.render();
+      RoomsView.render();
     },1000);
 
 

@@ -12,4 +12,4 @@ var MessageView = {
     <div></div>
   </div>
   `)
-}
+};
